@@ -13,6 +13,8 @@ import ImageResize from 'tiptap-extension-resize-image'
 import Underline from '@tiptap/extension-underline'
 import FontFamily from '@tiptap/extension-font-family'
 import TextStyle from '@tiptap/extension-text-style'
+import Highlight from '@tiptap/extension-highlight'
+import { Color } from '@tiptap/extension-color'
 
 import { useEditorStore } from '@/store/user-editor-store';
 
@@ -62,6 +64,10 @@ export const Editor = () => {
       TableHeader,
       TableRow,
       TaskList,
+      Color,
+      Highlight.configure({
+        multicolor: true,
+      }),
       TaskItem.configure({
         nested: true,
       }),
