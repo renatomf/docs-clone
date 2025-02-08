@@ -10,6 +10,7 @@ import TableHeader from '@tiptap/extension-table-header'
 import TableRow from '@tiptap/extension-table-row'
 import Image from '@tiptap/extension-image'
 import ImageResize from 'tiptap-extension-resize-image'
+import Underline from '@tiptap/extension-underline'
 
 import { useEditorStore } from '@/store/user-editor-store';
 
@@ -52,13 +53,14 @@ export const Editor = () => {
       ImageResize,
       StarterKit,
       Table,
+      Underline,
       TableCell,
       TableHeader,
       TableRow,
+      TaskList,
       TaskItem.configure({
         nested: true,
       }),
-      TaskList,
     ],
     content: `
         <table>
