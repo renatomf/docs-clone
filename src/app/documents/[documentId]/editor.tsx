@@ -19,6 +19,7 @@ import TextAlign from '@tiptap/extension-text-align'
 import { Color } from '@tiptap/extension-color'
 
 import { useEditorStore } from '@/store/user-editor-store';
+import { FontSizeExtension } from '@/extensions/font-size';
 
 export const Editor = () => {
   const { setEditor } = useEditorStore();
@@ -55,6 +56,7 @@ export const Editor = () => {
       },
     },
     extensions: [
+      FontSizeExtension,
       Image,
       ImageResize,
       FontFamily,
