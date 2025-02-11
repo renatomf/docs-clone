@@ -2,6 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { DocumentInput } from "./document-input";
+import { OrganizationSwitcher, UserButton } from "@clerk/nextjs";
+
+import { BsFilePdf } from "react-icons/bs";
 import { 
   BoldIcon,
   FileIcon, 
@@ -20,7 +24,6 @@ import {
   UnderlineIcon, 
   Undo2Icon,
 } from "lucide-react";
-import { BsFilePdf } from "react-icons/bs";
 
 import { 
   Menubar,
@@ -37,7 +40,6 @@ import {
 
 import { useEditorStore } from "@/store/user-editor-store";
 
-import { DocumentInput } from "./document-input";
 
 export const Navbar = () => {
   const { editor } = useEditorStore();
@@ -225,6 +227,15 @@ export const Navbar = () => {
           </div>
         </div>
       </div>
+      <div className="flex gap-3 items-center pl-6">
+      <OrganizationSwitcher
+        afterCreateOrganizationUrl="/"
+        afterLeaveOrganizationUrl="/"
+        afterSelectOrganizationUrl="/"
+        afterSelectPersonalUrl="/"
+      />
+      <UserButton />
+    </div>
     </nav>
   )
 }
